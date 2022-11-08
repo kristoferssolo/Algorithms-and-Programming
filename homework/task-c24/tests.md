@@ -1,6 +1,6 @@
 # C uzdevums
 C24. Autors - Kristiāns Francis Cagulis, kc22015  
-Fails izveidots: .10.2022.  
+Fails izveidots: 16.10.2022.  
 
 
 ## Uzdevuma nosacījumi

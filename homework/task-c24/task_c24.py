@@ -11,8 +11,8 @@ def main() -> None:
     """Main function"""
 
     while True:
-        array = get_input()
-        print(f"{make_ascending(array)}")
+        numbers = get_input()
+        print(f"{make_ascending(numbers)}")
 
         ask_continue = input("Continue program? [1/0] ")
         yes = ["y", "yes", "j", "ja", "jā", "", "1"]
@@ -20,26 +20,21 @@ def main() -> None:
             sys.exit("User closed the program")
 
 
-def make_ascending(array: list) -> list:
+def make_ascending(numbers: list) -> list:
     """Removes all elements that prevent the array from being ascending."""
-    pass
-
-
-def make_ascending2(array: list) -> list:
-    """Removes all elements that prevent the array from being ascending."""
-    new_array = []
-    prev_num = array[0]
-    for number in array:
-        if number >= prev_num:
-            new_array.append(number)
-            prev_num = number
-    return new_array
+    ordered_numbers = []
+    previous_number = numbers[0]
+    for number in numbers:
+        if number >= previous_number:
+            ordered_numbers.append(number)
+            previous_number = number
+    return ordered_numbers
 
 
 def get_input() -> list:
     """Gets user input and returns its integer value"""
     while True:
-        array = input("Enter number (q for exit): ").strip().split()
+        array = input("Enter numbers (q for exit): ").strip().split()
         if "q" in array:
             sys.exit("User closed the program")
         try:

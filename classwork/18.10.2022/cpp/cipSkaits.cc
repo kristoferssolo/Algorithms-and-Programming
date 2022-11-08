@@ -1,4 +1,4 @@
-#include "math.h"
+#include <cmath>
 
 int cipSkaits(int number) {
   if (!number)

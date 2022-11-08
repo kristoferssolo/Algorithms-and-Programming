@@ -4,7 +4,7 @@ AuPla0701.
 Programma izveidota: 17.10.2022.
 ******************************************/
 
-#include "cipSkaits.h"
+#include "./cipSkaits.hh"
 #include "iostream"
 using namespace std;
 
