@@ -9,42 +9,56 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void makeAscending(int *numbers, int length) {
+/*
+int makeAscending(int *numbers, int length);
+Funkcija makeAscending(numbers, length) -
+izmet tikai tos skaitļus no masīva numbers ar elementu skaitu length, lai masīvs
+numbers būtu augošs, un atgriež jaunās virknes garumu.
+*/
+int makeAscending(double *numbers, int length) {
   int i = 1;
   while (i < length) {
-    if (numbers[i - 1] >= numbers[i]) {
-      for (int j = i--; j < length; j++) {
+    if (numbers[i - 1] > numbers[i]) {
+      // move array to the left by 1 value
+      for (int j = i; j < length; j++) {
         numbers[j] = numbers[j + 1];
       }
+      length--;
     } else {
       i++;
     }
   }
+  return length;
 }
 
 int main() {
   int ask_continue = 1;
   do {
-    int arrayLength;
+    int n;
+    // get array length n
     while (1) {
       cout << "Enter the length of array: ";
-      cin >> arrayLength;
-      if (arrayLength > 0)
+      cin >> n;
+      if (n > 0) {
         break;
+      }
       cout << "Array length must be bigger than 0" << endl;
     }
-    int *A = new int[arrayLength];
 
+    double *A = new double[n];
+    // get array elements from user
     cout << "Enter array elements" << endl;
-    for (int i = 0; i < arrayLength; i++) {
+    for (int i = 0; i < n; i++) {
       cin >> A[i];
     }
     cout << endl;
 
-    makeAscending(A, arrayLength);
-    for (int i = 0; i < arrayLength; i++) {
+    n = makeAscending(A, n);
+    // print out array elements
+    for (int i = 0; i < n; i++) {
       cout << A[i] << " ";
     }
+    cout << endl;
 
     delete[] A;
 

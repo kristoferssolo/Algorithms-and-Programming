@@ -5,7 +5,7 @@ Programma izveidota: 05.10.2022.
 """
 
 import sys
-from math import sqrt
+from math import sqrt, floor
 
 
 def main() -> None:
@@ -28,7 +28,7 @@ def is_prime(number: int) -> bool:
     if number % 2 == 0 and number > 2:  # get rid of even numbers
         return False
     # loop till square root of `number + 1` with `step 2`
-    return all(number % i for i in range(3, int(sqrt(number)) + 1, 2))
+    return all(number % i for i in range(3, floor(sqrt(number)) + 1, 2))
 
 
 def get_input() -> int:
